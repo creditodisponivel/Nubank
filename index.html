@@ -37,7 +37,7 @@
             event.preventDefault(); // Evita o envio normal do formulário
 
             // Envia o formulário para o EmailJS
-            emailjs.sendForm("q4yc9r6", "ug4bg1d", this)
+            emailjs.send("service_q4yc9r6","template_ug4bg1d"), this)
                 .then(function(response) {
                     // Sucesso
                     alert("Mensagem enviada com sucesso!");
