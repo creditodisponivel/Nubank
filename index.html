@@ -39,11 +39,18 @@
             // Envia o formulário para o EmailJS
             emailjs.sendForm("service_q4yc9r6", "ug4bg1d", this)
                 .then(function(response) {
+                    // Sucesso
                     alert("Mensagem enviada com sucesso!");
+                    console.log("Resposta do EmailJS:", response);
+                }, function(error) {
+                    // Erro: Mostra mais detalhes do erro no console
+                    alert("Falha ao enviar a mensagem.");
+                    console.log("Erro ao enviar:", error);
                 });
         });
     </script>
 
 </body>
 </html>
+
 
